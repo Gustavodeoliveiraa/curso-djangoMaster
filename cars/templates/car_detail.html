@@ -80,9 +80,10 @@
     }
   </style>
   <div class="car-card">
-      {% if object.photo  %}
+      {% if object.photo %}
         <img src="{{ object.photo.url }}" alt="{{ object.model }} - {{ object.brand }}">
-    {% endif %}
+      {% endif %}
+
       <h2>{{ object.brand }} {{ object.model }}</h2>
       <p><strong>Ano de fabricação:</strong> {{ object.factory_year }}</p>
       <p><strong>Ano do modelo:</strong> {{ object.model_year }}</p>
@@ -91,5 +92,6 @@
   </div>
   <div class="buttons-container">
     <a href="{% url 'car_update' pk=object.pk %}" class="btn btn-primary">Editar</a>
+    <a href="{% url 'car_delete' pk=object.pk %}" class="btn btn-danger">Deletar</a>
   </div>
 {% endblock %}
